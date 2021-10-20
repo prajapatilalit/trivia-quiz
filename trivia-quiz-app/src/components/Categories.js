@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const Categories = ({ quizData, selectedCategory, handleSelectCategory }) => {
   let categoryDuplicates = quizData.reduce((previousValue, currentValue) => {
@@ -16,6 +17,9 @@ const Categories = ({ quizData, selectedCategory, handleSelectCategory }) => {
             return <option key={index}>{quiz.category}</option>;
           })}
         </select>
+        <Link to="/">
+          <button>Back to Home</button>
+        </Link>
       </form>
       {quizData
         .filter((quiz) => quiz.category === selectedCategory)
